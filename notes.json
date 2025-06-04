@@ -1,0 +1,51 @@
+{
+  "sections": [
+    {
+      "name": "Mathematics",
+      "notes": [
+        {
+          "title": "Algebra Basics",
+          "description": "Introduction to algebraic expressions and equations",
+          "pdfLink": "https://example.com/algebra-basics.pdf",
+          "extraMaterials": [
+            {
+              "title": "Algebra Practice Problems",
+              "url": "https://example.com/algebra-practice.pdf"
+            }
+          ],
+          "relatedTopics": [
+            {
+              "title": "Geometry Fundamentals",
+              "url": "https://example.com/geometry-fundamentals"
+            }
+          ]
+        },
+        {
+          "title": "Calculus Introduction",
+          "description": "Basic calculus concepts and limits",
+          "pdfLink": "https://example.com/calculus-intro.pdf",
+          "extraMaterials": [],
+          "relatedTopics": []
+        }
+      ]
+    },
+    {
+      "name": "Physics",
+      "notes": [
+        {
+          "title": "Classical Mechanics",
+          "description": "Motion, forces, and energy basics",
+          "pdfLink": "https://example.com/classical-mechanics.pdf",
+          "extraMaterials": [],
+          "relatedTopics": [
+            {
+              "title": "Thermodynamics",
+              "url": "https://example.com/thermodynamics"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
