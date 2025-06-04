@@ -227,6 +227,38 @@
     color: var(--gray-light);
   }
 
+  /* Download Icons for download and back */
+  #download-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .icon-button {
+    background: var(--blue);
+    border: none;
+    border-radius: 30px;
+    width: 56px;
+    height: 56px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 28px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  .icon-button:disabled {
+    background: var(--gray-medium);
+    cursor: not-allowed;
+    color: var(--gray-light);
+  }
+  .icon-button:not(:disabled):hover,
+  .icon-button:not(:disabled):focus {
+    background: var(--blue-dark);
+    outline: none;
+  }
+
   /* More materials and related topics section */
   .extra-materials, .related-topics {
     margin-top: 30px;
@@ -291,6 +323,22 @@
   #info-page p {
     font-size: 1.1rem;
     line-height: 1.5;
+  }
+  /* Recent Activity, Downloads, Notifications in Info page */
+  .info-section {
+    margin-top: 20px;
+  }
+  .info-section h3 {
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+  }
+  .info-list {
+    list-style: disc inside;
+    margin: 0 0 20px 0;
+    padding-left: 0;
+  }
+  .info-list li {
+    margin-bottom: 6px;
   }
 
   /* Bottom nav container with site nav and icons */
@@ -517,11 +565,18 @@
   <section id="download-page" aria-live="polite" aria-atomic="true" style="display:none; text-align:center; padding: 0 20px;">
     <h2 id="note-title"></h2>
     <p id="note-description">Tap the button below to download the note.</p>
-    <div id="progress-bar-container" aria-hidden="true" style="position:relative;">
+    <button id="download-btn" class="icon-button" disabled aria-label="Download PDF" aria-live="polite" aria-busy="false" title="Download PDF" type="button">
+      <span class="material-symbols-outlined" aria-hidden="true">download</span>
+    </button>
+    <button id="back-btn" class="icon-button" aria-label="Back to notes list" title="Back to Notes" type="button">
+      <span class="material-symbols-outlined" aria-hidden="true">arrow_back</span>
+    </button>
+
+    <div id="progress-bar-container" aria-hidden="true" style="position:relative; margin-top: 20px;">
       <div id="progress-bar"></div>
       <div id="progress-text" aria-live="off" aria-atomic="true" style="position: absolute; right: 14px; top: 50%; transform: translateY(-50%); font-weight:700; color: var(--gray-dark); user-select:none;">0%</div>
     </div>
-    <div id="download-progress-info" style="margin-bottom: 32px; font-weight: 600; font-size: 1rem; color: var(--gray-medium);"></div>
+    <div id="download-progress-info" style="margin-top: 16px; font-weight: 600; font-size: 1rem; color: var(--gray-medium);"></div>
 
     <div class="extra-materials" aria-label="More Added Materials">
       <h3>More Added Materials</h3>
@@ -531,15 +586,6 @@
     <div class="related-topics" aria-label="Related Topics">
       <h3>Related Topics</h3>
       <ul id="related-topics-list"></ul>
-    </div>
-
-    <div id="download-actions">
-      <button id="download-btn" disabled aria-live="polite" aria-atomic="true" aria-busy="false" style="width: 100%; padding: 16px; font-size: 1.25rem; font-weight: 700; border-radius: 30px; background: var(--blue); color:#fff; border:none; cursor:pointer; user-select:none;">
-        Download PDF
-      </button>
-      <button id="back-btn" aria-label="Back to notes list" style="margin-top: 20px; width: 100%; padding: 14px; font-size: 1rem; font-weight: 700; border-radius: 30px; background: transparent; border: 2px solid var(--gray-medium); cursor: pointer;">
-        ← Back to Notes
-      </button>
     </div>
   </section>
 
@@ -557,6 +603,14 @@
         Sample Setting Option (no effect)
       </label>
     </div>
+    <div class="setting-option">
+      <label for="font-size-select">Font Size</label><br/>
+      <select id="font-size-select" style="margin-top: 6px;">
+        <option value="small">Small</option>
+        <option value="medium" selected>Medium</option>
+        <option value="large">Large</option>
+      </select>
+    </div>
   </section>
 
   <section id="info-page" role="region" aria-label="Information Page" style="display:none;">
@@ -564,6 +618,24 @@
     <p>This Notes application allows you to browse, download, and manage notes and materials efficiently.</p>
     <p>Features include light/dark theme switching, topic and notes listing with rich visual cues, and a convenient mobile-friendly navigation.</p>
     <p>Developed with accessibility and user experience in mind.</p>
+    <div class="info-section" aria-label="Recent Activity">
+      <h3>Recent Activity</h3>
+      <ul class="info-list" id="recent-activity-list">
+        <li>No recent activity.</li>
+      </ul>
+    </div>
+    <div class="info-section" aria-label="Downloads">
+      <h3>Downloads</h3>
+      <ul class="info-list" id="downloads-list">
+        <li>No recent downloads.</li>
+      </ul>
+    </div>
+    <div class="info-section" aria-label="Notifications">
+      <h3>Notifications</h3>
+      <ul class="info-list" id="notifications-list">
+        <li>No new notifications.</li>
+      </ul>
+    </div>
   </section>
 </main>
 
@@ -636,6 +708,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const moreMaterialsList = document.getElementById("more-materials-list");
   const relatedTopicsList = document.getElementById("related-topics-list");
   const darkModeToggleCheckbox = document.getElementById("dark-mode-toggle");
+  const fontSizeSelect = document.getElementById("font-size-select");
+  const exampleSettingCheckbox = document.getElementById("example-setting");
+  const recentActivityList = document.getElementById("recent-activity-list");
+  const downloadsList = document.getElementById("downloads-list");
+  const notificationsList = document.getElementById("notifications-list");
 
   async function loadNotesJson() {
     try {
@@ -672,6 +749,7 @@ document.addEventListener("DOMContentLoaded", () => {
     infoPage.style.display = "none";
   }
 
+  // Render lists: move numbering before letter box
   function showBooksList() {
     hideAllPages();
     if (!notesDataCache) return;
@@ -693,12 +771,14 @@ document.addEventListener("DOMContentLoaded", () => {
       li.addEventListener("click", () => {
         showNotesOfBook(section);
         setActiveTopTab(navNotesLink);
+        addRecentActivity(`Viewed section: ${section.name}`);
       });
       li.addEventListener("keydown", e => {
         if(e.key==="Enter" || e.key===" ") {
           e.preventDefault();
           showNotesOfBook(section);
           setActiveTopTab(navNotesLink);
+          addRecentActivity(`Viewed section: ${section.name}`);
         }
       });
       ul.appendChild(li);
@@ -731,11 +811,13 @@ document.addEventListener("DOMContentLoaded", () => {
       a.addEventListener("click", e => {
         e.preventDefault();
         openDownloadPage(note);
+        addRecentActivity(`Opened note: ${note.title}`);
       });
       a.addEventListener("keydown", e => {
         if (e.key === "Enter" || e.key === " ") {
           e.preventDefault();
           openDownloadPage(note);
+          addRecentActivity(`Opened note: ${note.title}`);
         }
       });
       ul.appendChild(li);
@@ -772,11 +854,13 @@ document.addEventListener("DOMContentLoaded", () => {
         a.addEventListener("click", e => {
           e.preventDefault();
           openDownloadPage(note);
+          addRecentActivity(`Opened note: ${note.title}`);
         });
         a.addEventListener("keydown", e => {
           if(e.key === "Enter" || e.key === " ") {
             e.preventDefault();
             openDownloadPage(note);
+            addRecentActivity(`Opened note: ${note.title}`);
           }
         });
         ul.appendChild(li);
@@ -785,6 +869,74 @@ document.addEventListener("DOMContentLoaded", () => {
       contentPage.appendChild(sectionEl);
     });
     contentPage.style.display="";
+  }
+
+  // Recents, downloads, notifications storage and rendering
+  let recentActivity = JSON.parse(localStorage.getItem('recentActivity') || "[]");
+  let recentDownloads = JSON.parse(localStorage.getItem('recentDownloads') || "[]");
+  let notifications = JSON.parse(localStorage.getItem('notifications') || "[]");
+
+  function renderRecentActivity() {
+    recentActivityList.innerHTML = '';
+    if (recentActivity.length === 0) {
+      const li = document.createElement('li');
+      li.textContent = "No recent activity.";
+      recentActivityList.appendChild(li);
+      return;
+    }
+    recentActivity.slice(-10).reverse().forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = item;
+      recentActivityList.appendChild(li);
+    });
+  }
+
+  function renderDownloads() {
+    downloadsList.innerHTML = '';
+    if (recentDownloads.length === 0) {
+      const li = document.createElement('li');
+      li.textContent = "No recent downloads.";
+      downloadsList.appendChild(li);
+      return;
+    }
+    recentDownloads.slice(-10).reverse().forEach(title => {
+      const li = document.createElement('li');
+      li.textContent = title;
+      downloadsList.appendChild(li);
+    });
+  }
+
+  function renderNotifications() {
+    notificationsList.innerHTML = '';
+    if (notifications.length === 0) {
+      const li = document.createElement('li');
+      li.textContent = "No new notifications.";
+      notificationsList.appendChild(li);
+      return;
+    }
+    notifications.slice(-10).reverse().forEach(note => {
+      const li = document.createElement('li');
+      li.textContent = note;
+      notificationsList.appendChild(li);
+    });
+  }
+
+  function addRecentActivity(text) {
+    recentActivity.push(`${new Date().toLocaleString()}: ${text}`);
+    if (recentActivity.length > 30) recentActivity.shift();
+    localStorage.setItem('recentActivity', JSON.stringify(recentActivity));
+  }
+
+  function addRecentDownload(title) {
+    recentDownloads.push(`${new Date().toLocaleString()}: ${title}`);
+    if (recentDownloads.length > 30) recentDownloads.shift();
+    localStorage.setItem('recentDownloads', JSON.stringify(recentDownloads));
+  }
+
+  function addNotification(text) {
+    notifications.push(`${new Date().toLocaleString()}: ${text}`);
+    if (notifications.length > 30) notifications.shift();
+    localStorage.setItem('notifications', JSON.stringify(notifications));
   }
 
   function openDownloadPage(note) {
@@ -803,7 +955,13 @@ document.addEventListener("DOMContentLoaded", () => {
     populateExtraMaterials(note);
     populateRelatedTopics(note);
 
+    addRecentDownload(note.title);
+
     downloadPage.style.display = "block";
+
+    renderRecentActivity();
+    renderDownloads();
+    renderNotifications();
   }
 
   function populateExtraMaterials(note) {
@@ -900,7 +1058,7 @@ document.addEventListener("DOMContentLoaded", () => {
       clearInterval(downloadInterval);
       downloadInterval = null;
     }
-    downloadBtn.textContent = "Download PDF";
+    downloadBtn.textContent = "";
     downloadBtn.disabled = false;
     downloadProgressInfo.textContent = "";
     progressBar.style.width = "0%";
@@ -915,7 +1073,7 @@ document.addEventListener("DOMContentLoaded", () => {
     showBooksList();
   });
 
-  // Navigation tabs click handlers with Settings & Info page support
+  // Navigation handlers
   navHomeLink.addEventListener("click", e=>{
     e.preventDefault();
     setActiveTopTab(navHomeLink);
@@ -942,6 +1100,9 @@ document.addEventListener("DOMContentLoaded", () => {
     setActiveTopTab(navInfoLink);
     hideAllPages();
     infoPage.style.display = "block";
+    renderRecentActivity();
+    renderDownloads();
+    renderNotifications();
   });
 
   function setActiveTopTab(activeLink){
@@ -956,7 +1117,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Show download history list
   function showDownloadHistory(){
     hideAllPages();
     contentPage.innerHTML = "";
@@ -989,6 +1149,7 @@ document.addEventListener("DOMContentLoaded", () => {
         a.addEventListener("click", e => {
           e.preventDefault();
           openDownloadPage(note);
+          addRecentActivity(`Opened downloaded note: ${note.title}`);
         });
         ul.appendChild(li);
       });
@@ -1015,10 +1176,12 @@ document.addEventListener("DOMContentLoaded", () => {
   themeToggleBtn.addEventListener("click", () => {
     const isDark = document.body.classList.contains("dark-mode");
     setTheme(!isDark);
+    addNotification(`Theme changed to ${!isDark ? 'Dark' : 'Light'} mode`);
   });
   if(darkModeToggleCheckbox){
     darkModeToggleCheckbox.addEventListener("change", e => {
       setTheme(e.target.checked);
+      addNotification(`Theme changed to ${e.target.checked ? 'Dark' : 'Light'} mode`);
     });
   }
   const savedTheme = localStorage.getItem('theme');
@@ -1031,11 +1194,87 @@ document.addEventListener("DOMContentLoaded", () => {
     setTheme(prefersDark);
   }
 
+  // Font size setting
+  if(fontSizeSelect){
+    fontSizeSelect.addEventListener("change", e => {
+      document.documentElement.style.fontSize =
+        e.target.value === "small" ? "14px" :
+        e.target.value === "large" ? "18px" : "16px";
+      addNotification(`Font size changed to ${e.target.value}`);
+    });
+    // Init font size from localStorage or default medium
+    const savedFontSize = localStorage.getItem('fontSize') || "medium";
+    fontSizeSelect.value = savedFontSize;
+    document.documentElement.style.fontSize = 
+      savedFontSize === "small" ? "14px" :
+      savedFontSize === "large" ? "18px" : "16px";
+  }
+
+  // Sample example setting listener that records notification for demo
+  if(exampleSettingCheckbox){
+    exampleSettingCheckbox.addEventListener("change", e => {
+      addNotification(`Sample setting ${e.target.checked ? 'enabled' : 'disabled'}`);
+    });
+  }
+
+  function addNotification(text) {
+    notifications.push(`${new Date().toLocaleString()}: ${text}`);
+    if (notifications.length > 30) notifications.shift();
+    localStorage.setItem('notifications', JSON.stringify(notifications));
+    renderNotifications();
+  }
+
+  function renderRecentActivity() {
+    recentActivityList.innerHTML = '';
+    if (recentActivity.length === 0) {
+      const li = document.createElement('li');
+      li.textContent = "No recent activity.";
+      recentActivityList.appendChild(li);
+      return;
+    }
+    recentActivity.slice(-10).reverse().forEach(item => {
+      const li = document.createElement('li');
+      li.textContent = item;
+      recentActivityList.appendChild(li);
+    });
+  }
+
+  function renderDownloads() {
+    downloadsList.innerHTML = '';
+    if (recentDownloads.length === 0) {
+      const li = document.createElement('li');
+      li.textContent = "No recent downloads.";
+      downloadsList.appendChild(li);
+      return;
+    }
+    recentDownloads.slice(-10).reverse().forEach(title => {
+      const li = document.createElement('li');
+      li.textContent = title;
+      downloadsList.appendChild(li);
+    });
+  }
+
+  function renderNotifications() {
+    notificationsList.innerHTML = '';
+    if (notifications.length === 0) {
+      const li = document.createElement('li');
+      li.textContent = "No new notifications.";
+      notificationsList.appendChild(li);
+      return;
+    }
+    notifications.slice(-10).reverse().forEach(note => {
+      const li = document.createElement('li');
+      li.textContent = note;
+      notificationsList.appendChild(li);
+    });
+  }
+
   // Logo click resets to home
   const logoContainer = document.querySelector(".logo-container");
   logoContainer.addEventListener("click", () => {
     setActiveTopTab(navHomeLink);
     showBooksList();
+    addRecentActivity("Returned to Home page");
   });
   logoContainer.addEventListener("keydown", e => {
     if(e.key === "Enter" || e.key === " ") {
@@ -1053,6 +1292,9 @@ document.addEventListener("DOMContentLoaded", () => {
   (async function init() {
     await loadNotesJson();
     showBooksList();
+    renderRecentActivity();
+    renderDownloads();
+    renderNotifications();
   })();
 });
 </script>
