@@ -26,6 +26,52 @@
           "pdfLink": "https://example.com/calculus-intro.pdf",
           "extraMaterials": [],
           "relatedTopics": []
+        },
+        {
+          "title": "Statistics Overview",
+          "description": "Fundamentals of statistics including mean, median, and mode",
+          "pdfLink": "https://example.com/statistics-overview.pdf",
+          "extraMaterials": [
+            {
+              "title": "Statistics Practice Questions",
+              "url": "https://example.com/statistics-practice.pdf"
+            }
+          ],
+          "relatedTopics": [
+            {
+              "title": "Probability Theory",
+              "url": "https://example.com/probability-theory"
+            }
+          ]
+        },
+        {
+          "title": "Linear Algebra",
+          "description": "Matrix theory and vector spaces",
+          "pdfLink": "https://example.com/linear-algebra.pdf",
+          "extraMaterials": [
+            {
+              "title": "Matrix Exercises",
+              "url": "https://example.com/matrix-exercises.pdf"
+            }
+          ],
+          "relatedTopics": [
+            {
+              "title": "Differential Equations",
+              "url": "https://example.com/differential-equations"
+            }
+          ]
+        },
+        {
+          "title": "Discrete Mathematics",
+          "description": "Logic, set theory, and combinatorics",
+          "pdfLink": "https://example.com/discrete-math.pdf",
+          "extraMaterials": [],
+          "relatedTopics": [
+            {
+              "title": "Graph Theory",
+              "url": "https://example.com/graph-theory"
+            }
+          ]
         }
       ]
     },
@@ -43,6 +89,165 @@
               "url": "https://example.com/thermodynamics"
             }
           ]
+        },
+        {
+          "title": "Electromagnetism",
+          "description": "Study of electric charges, fields, and magnetic forces",
+          "pdfLink": "https://example.com/electromagnetism.pdf",
+          "extraMaterials": [
+            {
+              "title": "Electromagnetism Practice Problems",
+              "url": "https://example.com/electromagnetism-practice.pdf"
+            }
+          ],
+          "relatedTopics": [
+            {
+              "title": "Optics",
+              "url": "https://example.com/optics"
+            }
+          ]
+        },
+        {
+          "title": "Quantum Mechanics",
+          "description": "Introduction to principles of quantum physics",
+          "pdfLink": "https://example.com/quantum-mechanics.pdf",
+          "extraMaterials": [],
+          "relatedTopics": [
+            {
+              "title": "Particle Physics",
+              "url": "https://example.com/particle-physics"
+            }
+          ]
+        },
+        {
+          "title": "Thermodynamics",
+          "description": "Heat, work, and energy transfer",
+          "pdfLink": "https://example.com/thermodynamics-basics.pdf",
+          "extraMaterials": [],
+          "relatedTopics": []
+        }
+      ]
+    },
+    {
+      "name": "Chemistry",
+      "notes": [
+        {
+          "title": "Organic Chemistry Basics",
+          "description": "Introduction to organic compounds and reactions",
+          "pdfLink": "https://example.com/organic-chemistry-basics.pdf",
+          "extraMaterials": [],
+          "relatedTopics": [
+            {
+              "title": "Inorganic Chemistry",
+              "url": "https://example.com/inorganic-chemistry"
+            }
+          ]
+        },
+        {
+          "title": "Chemical Reactions",
+          "description": "Overview of different types of chemical reactions",
+          "pdfLink": "https://example.com/chemical-reactions.pdf",
+          "extraMaterials": [
+            {
+              "title": "Reaction Mechanisms",
+              "url": "https://example.com/reaction-mechanisms.pdf"
+            }
+          ],
+          "relatedTopics": []
+        },
+        {
+          "title": "Analytical Chemistry",
+          "description": "Techniques and methods for chemical analysis",
+          "pdfLink": "https://example.com/analytical-chemistry.pdf",
+          "extraMaterials": [],
+          "relatedTopics": []
+        }
+      ]
+    },
+    {
+      "name": "Biology",
+      "notes": [
+        {
+          "title": "Cell Biology",
+          "description": "Structure and function of cells",
+          "pdfLink": "https://example.com/cell-biology.pdf",
+          "extraMaterials": [
+            {
+              "title": "Cell Diagrams",
+              "url": "https://example.com/cell-diagrams.pdf"
+            }
+          ],
+          "relatedTopics": [
+            {
+              "title": "Genetics",
+              "url": "https://example.com/genetics"
+            }
+          ]
+        },
+        {
+          "title": "Genetics Fundamentals",
+          "description": "Basics of heredity and DNA",
+          "pdfLink": "https://example.com/genetics-fundamentals.pdf",
+          "extraMaterials": [],
+          "relatedTopics": []
+        }
+      ]
+    },
+    {
+      "name": "Computer Science",
+      "notes": [
+        {
+          "title": "Data Structures",
+          "description": "Introduction to arrays, lists, trees, and graphs",
+          "pdfLink": "https://example.com/data-structures.pdf",
+          "extraMaterials": [
+            {
+              "title": "Data Structure Exercises",
+              "url": "https://example.com/data-structure-exercises.pdf"
+            }
+          ],
+          "relatedTopics": [
+            {
+              "title": "Algorithms",
+              "url": "https://example.com/algorithms"
+            }
+          ]
+        },
+        {
+          "title": "Programming Basics",
+          "description": "Fundamentals of programming languages and syntax",
+          "pdfLink": "https://example.com/programming-basics.pdf",
+          "extraMaterials": [],
+          "relatedTopics": []
+        }
+      ]
+    },
+    {
+      "name": "History",
+      "notes": [
+        {
+          "title": "Ancient Civilizations",
+          "description": "An overview of early human societies",
+          "pdfLink": "https://example.com/ancient-civilizations.pdf",
+          "extraMaterials": [
+            {
+              "title": "Artifacts and Archaeology",
+              "url": "https://example.com/artifacts-archaeology.pdf"
+            }
+          ],
+          "relatedTopics": [
+            {
+              "title": "World History",
+              "url": "https://example.com/world-history"
+            }
+          ]
+        },
+        {
+          "title": "Modern History",
+          "description": "Key events from the 19th century to present",
+          "pdfLink": "https://example.com/modern-history.pdf",
+          "extraMaterials": [],
+          "relatedTopics": []
         }
       ]
     }
