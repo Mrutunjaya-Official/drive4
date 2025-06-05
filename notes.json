@@ -2,42 +2,99 @@
   "exams": [
     {
       "name": "UPSC Civil Services Preliminary Exam",
-      "syllabus": [
+      "sections": [
         {
-          "subject": "General Studies Paper 1",
-          "chapters": [
+          "name": "General Studies Paper 1",
+          "notes": [
             {
               "title": "History",
-              "link": "https://byjus.com/upsc/history-upsc-syllabus/"
+              "description": "Indian history from ancient to modern period.",
+              "pdfLink": "https://byjus.com/upsc/history-upsc-syllabus/",
+              "extraMaterials": [
+                {
+                  "title": "Ancient India Notes",
+                  "url": "https://byjus.com/upsc/ancient-india-notes/"
+                },
+                {
+                  "title": "Modern India Notes",
+                  "url": "https://byjus.com/upsc/modern-india-notes/"
+                }
+              ],
+              "relatedTopics": [
+                {
+                  "title": "Indian Culture",
+                  "url": "https://byjus.com/upsc/indian-culture-upsc-syllabus/"
+                }
+              ]
             },
             {
               "title": "Geography",
-              "link": "https://byjus.com/upsc/geography-upsc-syllabus/"
+              "description": "Physical, social, and economic geography of India and the world.",
+              "pdfLink": "https://byjus.com/upsc/geography-upsc-syllabus/",
+              "extraMaterials": [
+                {
+                  "title": "World Geography Notes",
+                  "url": "https://byjus.com/upsc/world-geography-notes/"
+                }
+              ],
+              "relatedTopics": []
             },
             {
               "title": "Polity",
-              "link": "https://byjus.com/upsc/polity-upsc-syllabus/"
+              "description": "Indian Constitution, political system, and governance.",
+              "pdfLink": "https://byjus.com/upsc/polity-upsc-syllabus/",
+              "extraMaterials": [
+                {
+                  "title": "Constitution of India Notes",
+                  "url": "https://byjus.com/upsc/constitution-notes/"
+                }
+              ],
+              "relatedTopics": []
             },
             {
               "title": "Economics",
-              "link": "https://byjus.com/upsc/economics-upsc-syllabus/"
+              "description": "Basic economic concepts and Indian economy.",
+              "pdfLink": "https://byjus.com/upsc/economics-upsc-syllabus/",
+              "extraMaterials": [
+                {
+                  "title": "Indian Economy Notes",
+                  "url": "https://byjus.com/upsc/indian-economy-notes/"
+                }
+              ],
+              "relatedTopics": []
             },
             {
               "title": "Environment and Ecology",
-              "link": "https://byjus.com/upsc/environment-and-ecology-upsc-syllabus/"
+              "description": "Environment, biodiversity and climate change.",
+              "pdfLink": "https://byjus.com/upsc/environment-and-ecology-upsc-syllabus/",
+              "extraMaterials": [],
+              "relatedTopics": []
             }
           ]
         },
         {
-          "subject": "General Studies Paper 2 (CSAT)",
-          "chapters": [
+          "name": "General Studies Paper 2 (CSAT)",
+          "notes": [
             {
               "title": "Comprehension",
-              "link": "https://www.clearias.com/upsc-csat-syllabus/"
+              "description": "Reading and understanding passage-based questions.",
+              "pdfLink": "https://www.clearias.com/upsc-csat-syllabus/",
+              "extraMaterials": [],
+              "relatedTopics": []
             },
             {
               "title": "Logical Reasoning",
-              "link": "https://www.clearias.com/upsc-csat-syllabus/"
+              "description": "Basic reasoning and analytical ability.",
+              "pdfLink": "https://www.clearias.com/upsc-csat-syllabus/",
+              "extraMaterials": [],
+              "relatedTopics": []
+            },
+            {
+              "title": "Decision Making and Problem Solving",
+              "description": "Problem solving using analytical methods.",
+              "pdfLink": "https://www.clearias.com/upsc-csat-syllabus/",
+              "extraMaterials": [],
+              "relatedTopics": []
             }
           ]
         }
@@ -45,43 +102,68 @@
     },
     {
       "name": "JEE Main",
-      "syllabus": [
+      "sections": [
         {
-          "subject": "Physics",
-          "chapters": [
+          "name": "Physics",
+          "notes": [
             {
               "title": "Kinematics",
-              "link": "https://jeemain.nta.nic.in/Physics.pdf"
+              "description": "Study of motion without considering its causes.",
+              "pdfLink": "https://jeemain.nta.nic.in/Physics.pdf",
+              "extraMaterials": [],
+              "relatedTopics": []
             },
             {
               "title": "Laws of Motion",
-              "link": "https://jeemain.nta.nic.in/Physics.pdf"
-            }
-          ]
-        },
-        {
-          "subject": "Chemistry",
-          "chapters": [
-            {
-              "title": "Atomic Structure",
-              "link": "https://jeemain.nta.nic.in/Chemistry.pdf"
+              "description": "Newton's laws and applications.",
+              "pdfLink": "https://jeemain.nta.nic.in/Physics.pdf",
+              "extraMaterials": [],
+              "relatedTopics": []
             },
             {
-              "title": "Chemical Bonding",
-              "link": "https://jeemain.nta.nic.in/Chemistry.pdf"
+              "title": "Work, Energy and Power",
+              "description": "Conservation of energy and work concepts.",
+              "pdfLink": "https://jeemain.nta.nic.in/Physics.pdf",
+              "extraMaterials": [],
+              "relatedTopics": []
             }
           ]
         },
         {
-          "subject": "Mathematics",
-          "chapters": [
+          "name": "Chemistry",
+          "notes": [
+            {
+              "title": "Atomic Structure",
+              "description": "Structure and behavior of atoms.",
+              "pdfLink": "https://jeemain.nta.nic.in/Chemistry.pdf",
+              "extraMaterials": [],
+              "relatedTopics": []
+            },
+            {
+              "title": "Chemical Bonding and Molecular Structure",
+              "description": "Types of bonds and molecular geometry.",
+              "pdfLink": "https://jeemain.nta.nic.in/Chemistry.pdf",
+              "extraMaterials": [],
+              "relatedTopics": []
+            }
+          ]
+        },
+        {
+          "name": "Mathematics",
+          "notes": [
             {
               "title": "Sets, Relations and Functions",
-              "link": "https://jeemain.nta.nic.in/Mathematics.pdf"
+              "description": "Basics of sets, relations and functions.",
+              "pdfLink": "https://jeemain.nta.nic.in/Mathematics.pdf",
+              "extraMaterials": [],
+              "relatedTopics": []
             },
             {
               "title": "Algebra",
-              "link": "https://jeemain.nta.nic.in/Mathematics.pdf"
+              "description": "Quadratic equations, sequences and series.",
+              "pdfLink": "https://jeemain.nta.nic.in/Mathematics.pdf",
+              "extraMaterials": [],
+              "relatedTopics": []
             }
           ]
         }
@@ -89,37 +171,49 @@
     },
     {
       "name": "GRE General Test",
-      "syllabus": [
+      "sections": [
         {
-          "subject": "Verbal Reasoning",
-          "chapters": [
+          "name": "Verbal Reasoning",
+          "notes": [
             {
               "title": "Reading Comprehension",
-              "link": "https://www.ets.org/gre/revised_general/prepare/verbal_reasoning"
+              "description": "Analyzing and answering questions about passages.",
+              "pdfLink": "https://www.ets.org/gre/revised_general/prepare/verbal_reasoning",
+              "extraMaterials": [],
+              "relatedTopics": []
             },
             {
               "title": "Text Completion",
-              "link": "https://www.ets.org/gre/revised_general/prepare/verbal_reasoning"
+              "description": "Filling in blanks in sentences with appropriate words.",
+              "pdfLink": "https://www.ets.org/gre/revised_general/prepare/verbal_reasoning",
+              "extraMaterials": [],
+              "relatedTopics": []
             }
           ]
         },
         {
-          "subject": "Quantitative Reasoning",
-          "chapters": [
+          "name": "Quantitative Reasoning",
+          "notes": [
             {
               "title": "Arithmetic",
-              "link": "https://www.ets.org/gre/revised_general/prepare/quantitative_reasoning"
+              "description": "Basic number properties and operations.",
+              "pdfLink": "https://www.ets.org/gre/revised_general/prepare/quantitative_reasoning",
+              "extraMaterials": [],
+              "relatedTopics": []
             },
             {
               "title": "Algebra",
-              "link": "https://www.ets.org/gre/revised_general/prepare/quantitative_reasoning"
+              "description": "Equations, inequalities, sequences and series.",
+              "pdfLink": "https://www.ets.org/gre/revised_general/prepare/quantitative_reasoning",
+              "extraMaterials": [],
+              "relatedTopics": []
             }
           ]
         }
       ]
     }
   ],
-  "subjects": [
+  "sections": [
     {
       "name": "Mathematics",
       "notes": [
@@ -185,7 +279,12 @@
           "title": "Electromagnetism",
           "description": "Study of electric charges, fields, and magnetic forces",
           "pdfLink": "https://example.com/electromagnetism.pdf",
-          "extraMaterials": [],
+          "extraMaterials": [
+            {
+              "title": "Electromagnetism Practice Problems",
+              "url": "https://example.com/electromagnetism-practice.pdf"
+            }
+          ],
           "relatedTopics": []
         }
       ]
@@ -240,246 +339,6 @@
           "title": "Ancient Civilizations",
           "description": "An overview of early human societies",
           "pdfLink": "https://example.com/ancient-civilizations.pdf",
-          "extraMaterials": [],
-          "relatedTopics": []
-        }
-      ]
-    },
-    {
-      "name": "Geography",
-      "notes": [
-        {
-          "title": "Physical Geography",
-          "description": "Study of natural features and processes",
-          "pdfLink": "https://example.com/physical-geography.pdf",
-          "extraMaterials": [],
-          "relatedTopics": []
-        }
-      ]
-    },
-    {
-      "name": "Economics",
-      "notes": [
-        {
-          "title": "Microeconomics",
-          "description": "Fundamentals of microeconomic theory",
-          "pdfLink": "https://example.com/microeconomics.pdf",
-          "extraMaterials": [],
-          "relatedTopics": []
-        }
-      ]
-    },
-    {
-      "name": "Political Science",
-      "notes": [
-        {
-          "title": "Political Theories",
-          "description": "Overview of major political theories",
-          "pdfLink": "https://example.com/political-theories.pdf",
-          "extraMaterials": [],
-          "relatedTopics": []
-        }
-      ]
-    },
-    {
-      "name": "Sociology",
-      "notes": [
-        {
-          "title": "Introduction to Sociology",
-          "description": "Basic concepts and theories in sociology",
-          "pdfLink": "https://example.com/introduction-to-sociology.pdf",
-          "extraMaterials": [],
-          "relatedTopics": []
-        }
-      ]
-    },
-    {
-      "name": "Psychology",
-      "notes": [
-        {
-          "title": "Cognitive Psychology",
-          "description": "Study of mental processes",
-          "pdfLink": "https://example.com/cognitive-psychology.pdf",
-          "extraMaterials": [],
-          "relatedTopics": []
-        }
-      ]
-    },
-    {
-      "name": "Philosophy",
-      "notes": [
-        {
-          "title": "Ethics",
-          "description": "Introduction to ethical theories",
-          "pdfLink": "https://example.com/ethics.pdf",
-          "extraMaterials": [],
-          "relatedTopics": []
-        }
-      ]
-    },
-    {
-      "name": "Statistics",
-      "notes": [
-        {
-          "title": "Descriptive Statistics",
-          "description": "Overview of descriptive statistical methods",
-          "pdfLink": "https://example.com/descriptive-statistics.pdf",
-          "extraMaterials": [],
-          "relatedTopics": []
-        }
-      ]
-    },
-    {
-      "name": "Environmental Science",
-      "notes": [
-        {
-          "title": "Ecosystems",
-          "description": "Study of ecosystems and biodiversity",
-          "pdfLink": "https://example.com/ecosystems.pdf",
-          "extraMaterials": [],
-          "relatedTopics": []
-        }
-      ]
-    },
-    {
-      "name": "Business Studies",
-      "notes": [
-        {
-          "title": "Principles of Management",
-          "description": "Fundamentals of management principles",
-          "pdfLink": "https://example.com/principles-of-management.pdf",
-          "extraMaterials": [],
-          "relatedTopics": []
-        }
-      ]
-    },
-    {
-      "name": "Accounting",
-      "notes": [
-        {
-          "title": "Financial Accounting",
-          "description": "Basics of financial accounting",
-          "pdfLink": "https://example.com/financial-accounting.pdf",
-          "extraMaterials": [],
-          "relatedTopics": []
-        }
-      ]
-    },
-    {
-      "name": "Information Technology",
-      "notes": [
-        {
-          "title": "Introduction to IT",
-          "description": "Overview of information technology concepts",
-          "pdfLink": "https://example.com/introduction-to-it.pdf",
-          "extraMaterials": [],
-          "relatedTopics": []
-        }
-      ]
-    },
-    {
-      "name": "Data Science",
-      "notes": [
-        {
-          "title": "Data Analysis",
-          "description": "Fundamentals of data analysis techniques",
-          "pdfLink": "https://example.com/data-analysis.pdf",
-          "extraMaterials": [],
-          "relatedTopics": []
-        }
-      ]
-    },
-    {
-      "name": "Artificial Intelligence",
-      "notes": [
-        {
-          "title": "Machine Learning",
-          "description": "Introduction to machine learning concepts",
-          "pdfLink": "https://example.com/machine-learning.pdf",
-          "extraMaterials": [],
-          "relatedTopics": []
-        }
-      ]
-    },
-    {
-      "name": "Cyber Security",
-      "notes": [
-        {
-          "title": "Network Security",
-          "description": "Basics of network security principles",
-          "pdfLink": "https://example.com/network-security.pdf",
-          "extraMaterials": [],
-          "relatedTopics": []
-        }
-      ]
-    },
-    {
-      "name": "Marketing",
-      "notes": [
-        {
-          "title": "Digital Marketing",
-          "description": "Overview of digital marketing strategies",
-          "pdfLink": "https://example.com/digital-marketing.pdf",
-          "extraMaterials": [],
-          "relatedTopics": []
-        }
-      ]
-    },
-    {
-      "name": "Human Resources",
-      "notes": [
-        {
-          "title": "HR Management",
-          "description": "Fundamentals of human resource management",
-          "pdfLink": "https://example.com/hr-management.pdf",
-          "extraMaterials": [],
-          "relatedTopics": []
-        }
-      ]
-    },
-    {
-      "name": "Finance",
-      "notes": [
-        {
-          "title": "Investment Analysis",
-          "description": "Basics of investment analysis techniques",
-          "pdfLink": "https://example.com/investment-analysis.pdf",
-          "extraMaterials": [],
-          "relatedTopics": []
-        }
-      ]
-    },
-    {
-      "name": "International Relations",
-      "notes": [
-        {
-          "title": "Global Politics",
-          "description": "Overview of global political systems",
-          "pdfLink": "https://example.com/global-politics.pdf",
-          "extraMaterials": [],
-          "relatedTopics": []
-        }
-      ]
-    },
-    {
-      "name": "Public Administration",
-      "notes": [
-        {
-          "title": "Public Policy",
-          "description": "Introduction to public policy analysis",
-          "pdfLink": "https://example.com/public-policy.pdf",
-          "extraMaterials": [],
-          "relatedTopics": []
-        }
-      ]
-    },
-    {
-      "name": "Social Work",
-      "notes": [
-        {
-          "title": "Social Welfare",
-          "description": "Overview of social welfare policies",
-          "pdfLink": "https://example.com/social-welfare.pdf",
           "extraMaterials": [],
           "relatedTopics": []
         }
